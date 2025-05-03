@@ -3,6 +3,7 @@ import { ChatForm } from "@/components/ChatForm";
 import { ChatMessage } from "@/components/ChatMessage";
 import { useEffect, useState } from "react";
 import { socket } from "@/lib/socketClient";
+import "./page.css";
 
 export default function Home() {
   const [room, setRoom] = useState("");
@@ -39,31 +40,42 @@ export default function Home() {
   };
   
   return (
-    <div className="">
+    <div className="container">
+       <i style={{ "--clr": "#11d5db" }}></i>
+       <i style={{ "--clr": "#d51ae6" }}></i>
+       <i style={{ "--clr": "#0ce289" }}></i>
+       
       {!joined ? (
-        <div className="">
-          <h1 className="">チャットルーム</h1>
+        <div className="box">
+          <h2 className="h1">チャットルーム</h2>
+          <div className="inputBx">
           <input
             type="text"
             placeholder="ユーザー名を入力"
             value={userName}
             onChange={(e) => setUserName(e.target.value)} 
           />
+          </div>
+          <div className="inputBx">
           <input 
             type="text"
             placeholder="部屋番号を入力"
             value={room}
             onChange={(e) => setRoom(e.target.value)}
           />
-          <button onClick={handleJoinRoom}>
-            join
-          </button>
+          </div>
+          <div className="inputBx">
+          <input
+            type="submit"
+            value="join"
+            onClick={handleJoinRoom}
+          />
+        </div>
         </div>
       ) : (
-        <div className="">
-          <h1 className="">Room: {room}
-          </h1>
-          <div className="">
+        <div className="chat-room">
+          <h1 className="h1">Room: {room}</h1>
+          <div className="message">
             {messages.map((msg, index) => (
               <ChatMessage
                 key={index}

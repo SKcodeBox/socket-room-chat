@@ -11,12 +11,10 @@ export const ChatMessage = ({ sender, message, isOwnMessage }: ChatMessageProps)
 
     return (
         <div>
-            <div>
-                {!isSystemMessage && (
-                    <p>{isOwnMessage ? 'you:' : `${sender}:`}</p>
-                )}
-                <p>{message}</p>
-            </div>
+            {!isSystemMessage && (
+            <p>{isOwnMessage ? 'you:' : `${sender}:`}</p>
+            )}
+            <p>{message}</p>
         </div>
     );
 };

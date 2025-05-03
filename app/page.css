@@ -1,0 +1,157 @@
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #464646;
+}
+.container
+{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container i
+{
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid #fff;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.container i:nth-child(1)
+{
+    animation: animate 20s linear infinite;
+}
+.container i:nth-child(2)
+{
+    animation: animate 30s linear infinite;
+}
+.container i:nth-child(3)
+{
+    animation: animate 40s linear infinite;
+}
+.container:hover i
+{
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(3600deg);
+    }
+}
+@keyframes animate4
+{
+    0%
+    {
+        transform: rotate(360deg);
+    }
+    100%
+    {
+        transform: rotate(0deg);
+    }
+}
+.box
+{
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.box h2
+{
+    font-size: 2em;
+    color: #fff;
+}
+.box .inputBx
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.box .inputBx input
+{
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+}
+.box .inputBx input[type="submit"]
+{
+    width: 40%;
+    background: #eb0a0a;
+    background: linear-gradient(45deg,#04abec,#df09cd);
+    border: none;
+    cursor: pointer;
+}
+.box .inputBx input::placeholder
+{
+    color: rgba(red, green, blue, alpha);
+}
+
+.chat-room {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+  
+  .chat-room .message {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 300px;
+  }
+  
+  .chat-room form {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .chat-room input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    color: #000;
+  }
+  
+  .chat-room button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #04abec;
+    color: white;
+    cursor: pointer;
+  }
+
+  .chat-room h1 {
+    color: #00ccff;
+  }
+
+  .chat-room .message {
+    color: #fff;
+  }
